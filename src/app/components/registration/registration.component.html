@@ -1,0 +1,54 @@
+<div class="clr-row">
+  <div class="clr-col-lg-4 clr-col-xl-4"></div>
+  <div class="clr-col-lg-4 clr-col-xl-4 clr-col-sm-12 clr-col-md-12">
+    <div class="card">
+      <div class="card-block">
+        <div class="card-title">
+          <h5>Register</h5>
+        </div>
+        <div class="card-text">
+          <form clrForm [formGroup]="regGroup">
+            <clr-input-container>
+              <label>First Name</label>
+              <input clrInput type="text" formControlName="firstName" />
+              <clr-control-helper>Should be 3 characters or more.</clr-control-helper>
+              <clr-control-error *clrIfError="'required'">First name is required.</clr-control-error>
+              <clr-control-error *clrIfError="'minlength'">First name is too short.</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+              <label>Last Name</label>
+              <input clrInput type="text" formControlName="lastName" />
+              <clr-control-helper>Should be 3 characters or more.</clr-control-helper>
+              <clr-control-error *clrIfError="'required'">Last name is required.</clr-control-error>
+              <clr-control-error *clrIfError="'minlength'">Last name is too short.</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+              <label>Email</label>
+              <input clrInput type="email" formControlName="email" />
+              <clr-control-helper>Should be a valid email.</clr-control-helper>
+              <clr-control-error *clrIfError="'required'">Email is required.</clr-control-error>
+              <clr-control-error *clrIfError="'email'">Email is invalid.</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+              <label>Username</label>
+              <input clrInput type="text" formControlName="username" />
+              <clr-control-helper>Should be 4 characters or more.</clr-control-helper>
+              <clr-control-error *clrIfError="'required'">Username is required.</clr-control-error>
+              <clr-control-error *clrIfError="'minlength'">Username is too short.</clr-control-error>
+              <clr-control-error *clrIfError="'maxlength'">Username is too long.</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+              <label>Password</label>
+              <input clrInput type="password" formControlName="password" />
+              <clr-control-helper>Should be 5 characters or more.</clr-control-helper>
+              <clr-control-error *clrIfError="'required'">Password is required.</clr-control-error>
+              <clr-control-error *clrIfError="'minlength'">Password is too short.</clr-control-error>
+            </clr-input-container>
+            <button class="btn btn-primary btn-md submit" type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clr-col-lg-4 clr-col-xl-4"></div>
+</div>
