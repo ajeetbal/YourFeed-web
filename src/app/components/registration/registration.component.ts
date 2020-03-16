@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ValidatorFn } from "@angular/forms";
+import { RegistrationService } from "src/app/services/registration.service";
 
 @Component({
   selector: "app-registration",
@@ -8,7 +9,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators, Valid
 })
 export class RegistrationComponent implements OnInit {
   regGroup: FormGroup;
-
+  isUsernameAvailable: boolean;
   firstName: FormControl = new FormControl("", [
     Validators.required, Validators.minLength(3)
   ]);
@@ -20,7 +21,7 @@ export class RegistrationComponent implements OnInit {
   ]);
   username: FormControl = new FormControl("", [
     Validators.required, Validators.minLength(4), Validators.maxLength(70),
-    Validators.pattern(/^[a-zA-Z0-9._-]{3,}$/)
+    Validators.pattern(/^[a-zA-Z0-9._-]{3,}$/), UsernameAvailable(this.isUsernameAvailable)
   ]);
   password: FormControl = new FormControl("", [
     Validators.required, Validators.minLength(5)
@@ -29,7 +30,7 @@ export class RegistrationComponent implements OnInit {
     Validators.required, PasswordsMatch(this.password)
   ]);
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private registrationService: RegistrationService) {
     this.regGroup = fb.group({
       firstName: this.firstName,
       lastName: this.lastName,
@@ -43,11 +44,30 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
     console.log("[Registration] initialized");
   }
+
+  onSubmit() {
+    this.registrationService.registerUser(this.regGroup.value).subscribe(res => {
+      console.log(res);
+    });
+  }
+  checkUserNameAvailability(event) {
+    this.registrationService.checkUserNameAvailability(event.target.value).subscribe(res => {
+      this.isUsernameAvailable = res.data;
+    });
+  }
+
+
 }
 
 const PasswordsMatch = (compared: AbstractControl): ValidatorFn => {
   return (control: AbstractControl): { [key: string]: any } | null => {
     const matches = control.value === compared.value;
     return !matches ? { nomatch: true } : null;
+  };
+};
+
+const UsernameAvailable = (isTrue: boolean): ValidatorFn => {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    return !isTrue ? { unavailable: true } : null;
   };
 };
