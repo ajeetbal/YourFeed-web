@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { RegistrationService } from 'src/app/services/registration.service';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ValidatorFn } from "@angular/forms";
+import { RegistrationService } from "src/app/services/registration.service";
 
 @Component({
   selector: "app-registration",
@@ -9,7 +9,7 @@ import { RegistrationService } from 'src/app/services/registration.service';
 })
 export class RegistrationComponent implements OnInit {
   regGroup: FormGroup;
-  isUsernameAvailable: Boolean;
+  isUsernameAvailable: boolean;
   firstName: FormControl = new FormControl("", [
     Validators.required, Validators.minLength(3)
   ]);
@@ -20,10 +20,14 @@ export class RegistrationComponent implements OnInit {
     Validators.required, Validators.email
   ]);
   username: FormControl = new FormControl("", [
-    Validators.required, Validators.minLength(4), Validators.maxLength(70)
+    Validators.required, Validators.minLength(4), Validators.maxLength(70),
+    Validators.pattern(/^[a-zA-Z0-9._-]{3,}$/), UsernameAvailable(this.isUsernameAvailable)
   ]);
   password: FormControl = new FormControl("", [
     Validators.required, Validators.minLength(5)
+  ]);
+  confirmPassword: FormControl = new FormControl("", [
+    Validators.required, PasswordsMatch(this.password)
   ]);
 
   constructor(fb: FormBuilder, private registrationService: RegistrationService) {
@@ -32,7 +36,8 @@ export class RegistrationComponent implements OnInit {
       lastName: this.lastName,
       email: this.email,
       username: this.username,
-      password: this.password
+      password: this.password,
+      confirmPassword: this.confirmPassword
     });
   }
 
@@ -53,3 +58,16 @@ export class RegistrationComponent implements OnInit {
 
 
 }
+
+const PasswordsMatch = (compared: AbstractControl): ValidatorFn => {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const matches = control.value === compared.value;
+    return !matches ? { nomatch: true } : null;
+  };
+};
+
+const UsernameAvailable = (isTrue: boolean): ValidatorFn => {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    return !isTrue ? { unavailable: true } : null;
+  };
+};

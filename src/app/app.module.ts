@@ -18,7 +18,8 @@ import { RegistrationComponent } from "./components";
     BrowserAnimationsModule,
     AppRoutingModule,
     ClarityDesignModule,
-    FormModule,HttpClientModule
+    FormModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
