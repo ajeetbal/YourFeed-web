@@ -4,7 +4,7 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-
+import { HttpClientModule } from '@angular/common/http';
 import { ClarityDesignModule, FormModule } from "./modules";
 import { RegistrationComponent } from "./components";
 
@@ -18,7 +18,7 @@ import { RegistrationComponent } from "./components";
     BrowserAnimationsModule,
     AppRoutingModule,
     ClarityDesignModule,
-    FormModule
+    FormModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { RegistrationService } from 'src/app/services/registration.service';
 
 @Component({
   selector: "app-registration",
@@ -8,7 +9,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms"
 })
 export class RegistrationComponent implements OnInit {
   regGroup: FormGroup;
-
+  isUsernameAvailable: Boolean;
   firstName: FormControl = new FormControl("", [
     Validators.required, Validators.minLength(3)
   ]);
@@ -25,7 +26,7 @@ export class RegistrationComponent implements OnInit {
     Validators.required, Validators.minLength(5)
   ]);
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private registrationService: RegistrationService) {
     this.regGroup = fb.group({
       firstName: this.firstName,
       lastName: this.lastName,
@@ -38,4 +39,17 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
     console.log("[Registration] initialized");
   }
+
+  onSubmit() {
+    this.registrationService.registerUser(this.regGroup.value).subscribe(res => {
+      console.log(res);
+    });
+  }
+  checkUserNameAvailability(event) {
+    this.registrationService.checkUserNameAvailability(event.target.value).subscribe(res => {
+      this.isUsernameAvailable = res.data;
+    });
+  }
+
+
 }
