@@ -11,28 +11,24 @@
             <clr-input-container>
               <label>First Name</label>
               <input clrInput type="text" formControlName="firstName" />
-              <clr-control-helper>Should be 3 characters or more.</clr-control-helper>
               <clr-control-error *clrIfError="'required'">First name is required.</clr-control-error>
               <clr-control-error *clrIfError="'minlength'">First name is too short.</clr-control-error>
             </clr-input-container>
             <clr-input-container>
               <label>Last Name</label>
               <input clrInput type="text" formControlName="lastName" />
-              <clr-control-helper>Should be 3 characters or more.</clr-control-helper>
               <clr-control-error *clrIfError="'required'">Last name is required.</clr-control-error>
               <clr-control-error *clrIfError="'minlength'">Last name is too short.</clr-control-error>
             </clr-input-container>
             <clr-input-container>
               <label>Email</label>
               <input clrInput type="email" formControlName="email" />
-              <clr-control-helper>Should be a valid email.</clr-control-helper>
               <clr-control-error *clrIfError="'required'">Email is required.</clr-control-error>
               <clr-control-error *clrIfError="'email'">Email is invalid.</clr-control-error>
             </clr-input-container>
             <clr-input-container>
               <label>Username</label>
               <input clrInput type="text" formControlName="username" />
-              <clr-control-helper>Should be 4 characters or more.</clr-control-helper>
               <clr-control-error *clrIfError="'required'">Username is required.</clr-control-error>
               <clr-control-error *clrIfError="'minlength'">Username is too short.</clr-control-error>
               <clr-control-error *clrIfError="'maxlength'">Username is too long.</clr-control-error>
@@ -40,11 +36,16 @@
             <clr-input-container>
               <label>Password</label>
               <input clrInput type="password" formControlName="password" />
-              <clr-control-helper>Should be 5 characters or more.</clr-control-helper>
               <clr-control-error *clrIfError="'required'">Password is required.</clr-control-error>
               <clr-control-error *clrIfError="'minlength'">Password is too short.</clr-control-error>
             </clr-input-container>
-            <button class="btn btn-primary btn-md submit" type="submit">Sign Up</button>
+            <clr-input-container>
+              <label>Confirm Password</label>
+              <input clrInput type="password" formControlName="confirmPassword" />
+              <clr-control-error *clrIfError="'required'">This field is required.</clr-control-error>
+              <clr-control-error *clrIfError="'nomatch'">Passwords do not match.</clr-control-error>
+            </clr-input-container>
+            <button class="btn btn-primary btn-md submit" type="submit" [disabled]="regGroup.invalid">Sign Up</button>
           </form>
         </div>
       </div>

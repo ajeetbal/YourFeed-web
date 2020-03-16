@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ValidatorFn } from "@angular/forms";
 
 @Component({
   selector: "app-registration",
@@ -19,10 +19,14 @@ export class RegistrationComponent implements OnInit {
     Validators.required, Validators.email
   ]);
   username: FormControl = new FormControl("", [
-    Validators.required, Validators.minLength(4), Validators.maxLength(70)
+    Validators.required, Validators.minLength(4), Validators.maxLength(70),
+    Validators.pattern(/^[a-zA-Z0-9._-]{3,}$/)
   ]);
   password: FormControl = new FormControl("", [
     Validators.required, Validators.minLength(5)
+  ]);
+  confirmPassword: FormControl = new FormControl("", [
+    Validators.required, PasswordsMatch(this.password)
   ]);
 
   constructor(fb: FormBuilder) {
@@ -31,7 +35,8 @@ export class RegistrationComponent implements OnInit {
       lastName: this.lastName,
       email: this.email,
       username: this.username,
-      password: this.password
+      password: this.password,
+      confirmPassword: this.confirmPassword
     });
   }
 
@@ -39,3 +44,10 @@ export class RegistrationComponent implements OnInit {
     console.log("[Registration] initialized");
   }
 }
+
+const PasswordsMatch = (compared: AbstractControl): ValidatorFn => {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const matches = control.value === compared.value;
+    return !matches ? { nomatch: true } : null;
+  };
+};
