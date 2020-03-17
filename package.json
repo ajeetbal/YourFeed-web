@@ -11,23 +11,14 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^9.0.6",
-    "@angular/cdk": "^9.1.2",
+    "@angular/animations": "~9.0.6",
     "@angular/common": "~9.0.6",
     "@angular/compiler": "~9.0.6",
     "@angular/core": "~9.0.6",
     "@angular/forms": "~9.0.6",
-    "@angular/material": "^9.1.2",
     "@angular/platform-browser": "~9.0.6",
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
-    "angular-bootstrap-md": "^9.0.0",
-    "angular-hammer": "^2.2.0",
-    "bootstrap": "^4.3.1",
-    "chart.js": "^2.5.0",
-    "font-awesome": "^4.7.0",
-    "hammerjs": "^2.0.8",
-    "mdbootstrap": "^4.14.0",
     "@clr/angular": "^3.0.1",
     "@clr/core": "^3.0.1",
     "@clr/icons": "^3.0.1",
@@ -61,18 +52,5 @@
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
-  },
-  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.",
-  "main": "karma.conf.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ajeetbal/YourFeed-web.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ajeetbal/YourFeed-web/issues"
-  },
-  "homepage": "https://github.com/ajeetbal/YourFeed-web#readme"
+  }
 }
