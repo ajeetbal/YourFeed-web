@@ -28,7 +28,7 @@
                         </clr-input-container>
                         <clr-input-container>
                             <label>Username</label>
-                            <input clrInput type="text" formControlName="username" (input)="checkUserNameAvailability($event)" />
+                            <input clrInput type="text" formControlName="username" (focusout)="checkUserNameAvailability($event)" />
                             <clr-control-error *clrIfError="'required'">Username is required.</clr-control-error>
                             <clr-control-error *clrIfError="'minlength'">Username is too short.</clr-control-error>
                             <clr-control-error *clrIfError="'maxlength'">Username is too long.</clr-control-error>
@@ -41,10 +41,10 @@
                             <clr-control-error *clrIfError="'minlength'">Password is too short.</clr-control-error>
                         </clr-input-container>
                         <clr-input-container>
-                          <label>Confirm Password</label>
-                          <input clrInput type="password" formControlName="confirmPassword" />
-                          <clr-control-error *clrIfError="'required'">Password is required.</clr-control-error>
-                          <clr-control-error *clrIfError="'nomatch'">Passwords do not match.</clr-control-error>
+                            <label>Confirm Password</label>
+                            <input clrInput type="password" formControlName="confirmPassword" />
+                            <clr-control-error *clrIfError="'required'">Password is required.</clr-control-error>
+                            <clr-control-error *clrIfError="'nomatch'">Passwords do not match.</clr-control-error>
                         </clr-input-container>
                         <button class="btn btn-primary btn-md submit" [disabled]="regGroup.invalid" type="submit">Sign Up</button>
                     </form>

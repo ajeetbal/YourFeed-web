@@ -19,10 +19,7 @@ export class RegistrationComponent implements OnInit {
   email: FormControl = new FormControl("", [
     Validators.required, Validators.email
   ]);
-  username: FormControl = new FormControl("", [
-    Validators.required, Validators.minLength(4), Validators.maxLength(70),
-    Validators.pattern(/^[a-zA-Z0-9._-]{3,}$/), UsernameAvailable(this.isUsernameAvailable)
-  ]);
+  username: FormControl = new FormControl("", []);
   password: FormControl = new FormControl("", [
     Validators.required, Validators.minLength(5)
   ]);
@@ -52,11 +49,18 @@ export class RegistrationComponent implements OnInit {
   }
   checkUserNameAvailability(event) {
     this.registrationService.checkUserNameAvailability(event.target.value).subscribe(res => {
+      this.regGroup.controls["username"].clearValidators();
       this.isUsernameAvailable = res.data;
+      this.regGroup.controls["username"].setValidators([this.UsernameAvailable(this.isUsernameAvailable), Validators.required, Validators.minLength(4), Validators.maxLength(70),
+      Validators.pattern(/^[a-zA-Z0-9._-]{3,}$/)]);
+      this.regGroup.controls["username"].updateValueAndValidity();
     });
   }
-
-
+  UsernameAvailable = (isTrue: boolean): ValidatorFn => {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      return (this.regGroup.get('username').value) ? !isTrue ? { unavailable: true } : null : { unavailable: false };
+    };
+  };
 }
 
 const PasswordsMatch = (compared: AbstractControl): ValidatorFn => {
@@ -66,8 +70,3 @@ const PasswordsMatch = (compared: AbstractControl): ValidatorFn => {
   };
 };
 
-const UsernameAvailable = (isTrue: boolean): ValidatorFn => {
-  return (control: AbstractControl): { [key: string]: any } | null => {
-    return !isTrue ? { unavailable: true } : null;
-  };
-};
