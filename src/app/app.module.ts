@@ -1,25 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule,  NO_ERRORS_SCHEMA } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from "@angular/core";
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { HttpClientModule } from '@angular/common/http';
+import { ClarityDesignModule, FormModule } from "./modules";
+import { RegistrationComponent } from "./components";
 import { DashboardModule } from './dashboard/dashboard.module';
-
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
+    ClarityDesignModule,
+    FormModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot(),  
     DashboardModule
   ],
-  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })
