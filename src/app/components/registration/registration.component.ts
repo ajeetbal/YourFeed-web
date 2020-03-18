@@ -49,19 +49,21 @@ export class RegistrationComponent implements OnInit {
   }
   checkUserNameAvailability(event) {
     this.registrationService.checkUserNameAvailability(event.target.value).subscribe(res => {
-      this.regGroup.controls["username"].clearValidators();
+      this.regGroup.controls.username.clearValidators();
       this.isUsernameAvailable = res.data;
-      this.regGroup.controls["username"].setValidators([this.UsernameAvailable(this.isUsernameAvailable), Validators.required, Validators.minLength(4), Validators.maxLength(70),
+      this.regGroup.controls.username
+      .setValidators([UsernameAvailable(this.isUsernameAvailable), Validators.required, Validators.minLength(4), Validators.maxLength(70),
       Validators.pattern(/^[a-zA-Z0-9._-]{3,}$/)]);
-      this.regGroup.controls["username"].updateValueAndValidity();
+      this.regGroup.controls.username.updateValueAndValidity();
     });
   }
-  UsernameAvailable = (isTrue: boolean): ValidatorFn => {
-    return (control: AbstractControl): { [key: string]: any } | null => {
-      return (this.regGroup.get('username').value) ? !isTrue ? { unavailable: true } : null : { unavailable: false };
-    };
-  };
 }
+
+const UsernameAvailable = (isTrue: boolean): ValidatorFn => {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    return (this.regGroup.get("username").value) ? !isTrue ? { unavailable: true } : null : { unavailable: false };
+  };
+};
 
 const PasswordsMatch = (compared: AbstractControl): ValidatorFn => {
   return (control: AbstractControl): { [key: string]: any } | null => {
