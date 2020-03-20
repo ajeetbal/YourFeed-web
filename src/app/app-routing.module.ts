@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: "landing", children: [
     { path: "registration", component: RegistrationComponent },
     { path: "content-section", component:ContentSectionComponent },
-    { path: "", redirectTo: "Content-section", pathMatch: "full" }
   ] },
   { path: "", redirectTo: "landing", pathMatch: "full" },
   

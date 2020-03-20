@@ -6,11 +6,13 @@
             <mat-form-field class="width_full">
                 <input matInput placeholder="search">
             </mat-form-field>
-            <button *ngif="false" mat-raised-button color="accent">
+            <span *ngIf="false">
+            <button mat-raised-button color="accent">
                 <mat-icon>add_alert</mat-icon>
             </button>
-            <button mat-raised-button color="accent">Login</button>
-
+          </span>
+            <span *ngIf="toggleKey"> <button mat-raised-button color="accent" [routerLink]="['/landing/content-section']" (click)="toggle()">Login</button>
+            </span>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
