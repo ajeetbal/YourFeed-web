@@ -7,7 +7,6 @@ import { HeaderComponent } from './components/header/header.component';
 const routes: Routes = [
   { path: "landing", children: [
     { path: "registration", component: RegistrationComponent },
-    { path: "header", component: HeaderComponent },
     { path: "", redirectTo: "registration", pathMatch: "full" }
   ] },
   { path: "", redirectTo: "landing", pathMatch: "full" }

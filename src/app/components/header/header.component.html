@@ -1,14 +1,16 @@
 <mat-toolbar class="header_background">
     <mat-toolbar-row>
         <div class="width_90">
-            <span><img  src="./assets/logo.png"  class="width_50"></span>
-            <a  mat-button  routerLink="/customer-list"  routerLinkActive="active">Your Feed</a> 
         </div>
         <div>
-                <a mat-button  routerLink="/notifications">Notifications<mat-icon>add_alert</mat-icon></a>
-                <a mat-button  routerLink="/notifications">Search<mat-icon>search</mat-icon></a>              
-                 <a  mat-button  routerLink="/login">Login<mat-icon>supervised_user_circle</mat-icon></a> 
-       </div>          
-                        
-    </mat-toolbar-row>    
+            <mat-form-field class="width_full">
+                <input matInput placeholder="search">
+            </mat-form-field>
+            <button *ngif="false" mat-raised-button color="accent">
+                <mat-icon>add_alert</mat-icon>
+            </button>
+            <button mat-raised-button color="accent">Login</button>
+
+        </div>
+    </mat-toolbar-row>
 </mat-toolbar>
