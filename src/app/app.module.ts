@@ -14,11 +14,17 @@ import { RegistrationComponent } from "./components";
 import { HeaderComponent } from './components/header/header.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ContentSectionComponent } from './components/content-section/content-section.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { LoginComponent } from './components/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContentSectionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatMenuModule,
     MatIconModule,
     MatFormFieldModule, 
-    MatInputModule
+    MatInputModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
