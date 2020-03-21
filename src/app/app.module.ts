@@ -12,12 +12,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClarityDesignModule, FormModule } from "./modules";
 import { RegistrationComponent } from "./components";
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    HeaderComponent  
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent  
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+footer {
+    background-color: #ccc;
+  }
+  .info-color-dark {
+    background-color: #09c !important;
+}
+
+footer a {
+  color: #09c;
+}
+
+footer .mat-toolbar.mat-primary{
+  background: greenyellow;
+  color: #fff;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
