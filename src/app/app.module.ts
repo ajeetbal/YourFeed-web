@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClarityDesignModule, FormModule } from "./modules";
 import { RegistrationComponent } from "./components";
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ContentSectionComponent } from './components/content-section/content-section.component';
@@ -23,6 +25,8 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     RegistrationComponent,
     HeaderComponent,
+    FooterComponent,
+    HomeComponent,  
     ContentSectionComponent,
     LoginComponent
   ],
