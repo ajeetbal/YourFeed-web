@@ -13,11 +13,10 @@ import { ClarityDesignModule, FormModule } from "./modules";
 import { RegistrationComponent } from "./components";
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ContentSectionComponent } from './components/content-section/content-section.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { LoginComponent } from './components/login/login.component';
     RegistrationComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,  
     ContentSectionComponent,
     LoginComponent
   ],
@@ -41,7 +39,7 @@ import { LoginComponent } from './components/login/login.component';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
-    MatFormFieldModule, 
+    MatFormFieldModule,
     MatInputModule,
     MatTabsModule
   ],
