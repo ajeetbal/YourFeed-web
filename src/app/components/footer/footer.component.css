@@ -15,7 +15,7 @@ footer .mat-toolbar.mat-primary{
 }
 
 .example-icon {
-  padding: 0 12px;
+  padding: 0 20px;
 }
 
 .example-spacer {
@@ -74,13 +74,17 @@ footer .mat-toolbar.mat-primary{
 }
 
 .fa-facebook {
-  background: #3B5998;
+  background: #09c;
   color: white;
+  border-radius: 25px;
+  width: 30px;
 }
 
 .fa-twitter {
   background: #55ACEE;
   color: white;
+  border-radius: 25px;
+  width: 30px;
 }
 
 .fa-google {
@@ -96,4 +100,76 @@ footer .mat-toolbar.mat-primary{
 .fa-youtube {
   background: #bb0000;
   color: white;
+  border-radius: 25px;
+  width: 30px;
 }
+/* .site-footer {
+  position: relative;
+} */
+/* #footer-bottom {
+  background-color: #1187d6;
+} */
+/* #footer-bottom, #footer-bottom p {
+  color: #ffffff;
+}
+#footer-bottom {
+  background-color: #1B1B1B;
+  padding: 15px 0;
+  font-size: 12px;
+  line-height: 2;
+}
+.clr:after, .group:after, dl:after, .left_float:after, .right_float:after {
+  content: '';
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+  height: 0;
+}
+.container {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+#footer-bottom.no-footer-nav #copyright {
+  float: none;
+  width: 100%;
+  text-align: center;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+#footer-bottom a {
+  color: #fff;
+} */
+
+
+    /* Add some padding on document's body to prevent the content
+    to go underneath the header and footer */
+    body{        
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    .fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #3b5998;
+        padding: 10px 0;
+        color: #fff;
+        z-index: 1000;
+    }
+    .mat-toolbar {
+      background: #3b5998;
+      color: #fff;
+  }
+    .fixed-header{
+        top: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }
+    .container{
+        width: 80%;
+        margin: 0 auto; /* Center the DIV horizontally */
+    }
+
+
