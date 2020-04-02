@@ -17,7 +17,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ContentSectionComponent } from './components/content-section/content-section.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
 import { LoginComponent } from './components/login/login.component';
+import { QuotemachineComponent } from './components/quotemachine/quotemachine.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { LoginComponent } from './components/login/login.component';
     HeaderComponent,
     FooterComponent,
     ContentSectionComponent,
-    LoginComponent
+    LoginComponent,
+    QuotemachineComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { LoginComponent } from './components/login/login.component';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
