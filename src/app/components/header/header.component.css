@@ -1,0 +1,30 @@
+    .width_90 {
+        width: 90%;
+    }
+    
+    .width_50 {
+        width: 50px;
+    }
+    
+    .header_background {
+        background-color: #3b5998;
+    }
+    
+    .mat-raised-button,
+    .mat-search-bar {
+        background-color: white;
+        margin: 4px;
+    }
+    
+    .mat-raised-button:hover {
+        background-color: #f0fff3;
+    }
+    
+    .width_full {
+        color: white;
+        width: 250px;
+    }
+    
+    .mat-form-field {
+        opacity: 0.4;
+    }

@@ -1,0 +1,175 @@
+footer {
+  background-color: #3b5998;
+  }
+  .info-color-dark {
+    background-color: #09c !important;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer .mat-toolbar.mat-primary{
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.example-icon {
+  padding: 0 20px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+/* 
+.app-footer {
+  background: blue,  
+} */
+
+.app-footer-link a {
+  color: #09c
+}
+
+.width_20{
+  width: 20%;
+}
+
+.width_35{
+  width: 35%;
+}
+
+.width_20 label{
+  font-size: 16px;
+  color: #fff;
+}
+
+.font_12{
+  font-size: 12px;
+  color: #fff;
+}
+
+.height_100{
+  height: 120px;
+}
+
+.twenty_padding_top{
+  padding-top: 30px;
+}
+
+.footer_background_color{
+  background-color: #3b5998;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 10px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #09c;
+  color: white;
+  border-radius: 25px;
+  width: 30px;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+  border-radius: 25px;
+  width: 30px;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+  border-radius: 25px;
+  width: 30px;
+}
+/* .site-footer {
+  position: relative;
+} */
+/* #footer-bottom {
+  background-color: #1187d6;
+} */
+/* #footer-bottom, #footer-bottom p {
+  color: #ffffff;
+}
+#footer-bottom {
+  background-color: #1B1B1B;
+  padding: 15px 0;
+  font-size: 12px;
+  line-height: 2;
+}
+.clr:after, .group:after, dl:after, .left_float:after, .right_float:after {
+  content: '';
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+  height: 0;
+}
+.container {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+#footer-bottom.no-footer-nav #copyright {
+  float: none;
+  width: 100%;
+  text-align: center;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+#footer-bottom a {
+  color: #fff;
+} */
+
+
+    /* Add some padding on document's body to prevent the content
+    to go underneath the header and footer */
+    body{        
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    .fixed-header, .fixed-footer{
+        width: 100%;
+        position: fixed;        
+        background: #3b5998;
+        padding: 10px 0;
+        color: #fff;
+        z-index: 1000;
+    }
+    .mat-toolbar {
+      background: #3b5998;
+      color: #fff;
+  }
+    .fixed-header{
+        top: 0;
+    }
+    .fixed-footer{
+        bottom: 0;
+    }
+    .container{
+        width: 80%;
+        margin: 0 auto; /* Center the DIV horizontally */
+    }
+
+

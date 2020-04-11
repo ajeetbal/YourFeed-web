@@ -1,0 +1,18 @@
+<mat-toolbar class="header_background">
+    <mat-toolbar-row>
+        <div class="width_90">
+        </div>
+        <div>
+            <mat-form-field class="width_full">
+                <input matInput placeholder="search">
+            </mat-form-field>
+            <span *ngIf="false">
+            <button mat-raised-button color="accent">
+                <mat-icon>add_alert</mat-icon>
+            </button>
+          </span>
+            <span *ngIf="toggleKey"> <button mat-raised-button color="accent" [routerLink]="['/landing/content-section']" (click)="toggle()">Login</button>
+            </span>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
