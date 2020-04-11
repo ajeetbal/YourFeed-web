@@ -20,7 +20,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import { LoginComponent } from './components/login/login.component';
 import { QuotemachineComponent } from './components/quotemachine/quotemachine.component';
-
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { QuotemachineComponent } from './components/quotemachine/quotemachine.co
     FooterComponent,
     ContentSectionComponent,
     LoginComponent,
-    QuotemachineComponent
+    QuotemachineComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { QuotemachineComponent } from './components/quotemachine/quotemachine.co
     MatFormFieldModule,
     MatInputModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

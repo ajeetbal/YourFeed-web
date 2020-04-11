@@ -5,13 +5,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContentSectionComponent } from './components/content-section/content-section.component'
 import { QuotemachineComponent } from './components/quotemachine/quotemachine.component';
-
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 const routes: Routes = [
   {
     path: "landing", children: [
       { path: "registration", component: RegistrationComponent },
       { path: "content-section", component: ContentSectionComponent },
-      { path: "quote-machine", component: QuotemachineComponent }
+      { path: "quote-machine", component: QuotemachineComponent },
+      { path: "app-user-profile", component: UserProfileComponent }
     ]
   },
   { path: "", redirectTo: "landing", pathMatch: "full" },
