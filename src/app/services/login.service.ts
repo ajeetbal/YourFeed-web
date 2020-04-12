@@ -7,18 +7,14 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LoginService {
-  loginUser(username: any, password: any): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }),
-      observe: 'response' as 'response'
-    };
-    const body = new HttpParams().set('username', username).set('password', password);
-    return this.http.post<any>(BASE_URL + APIS.USER_LOGIN, body, httpOptions).pipe(
-      map((e: HttpResponse<any>) => e));
+  loginUser(model: object): Observable<any> {
+    const getHeaders: HttpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    });
+    return this.http.post<any>(BASE_URL + APIS.USER_LOGIN, model, { headers: getHeaders });
   }
-  
+
 
   constructor(private http: HttpClient) { }
 

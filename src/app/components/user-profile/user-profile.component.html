@@ -1,4 +1,4 @@
-<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
     <div class="container main-secction">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 image-section">
@@ -12,7 +12,7 @@
                         </div>
                         <div class="row user-detail-row">
                             <div class="col-md-12 col-sm-12 user-detail-section2 pull-left">
-                            <div class="border"></div>
+                                <div class="border"></div>
                                 <p>FOLLOWER</p>
                                 <span>320</span>
                             </div>
@@ -29,7 +29,11 @@
                         <div class="col-md-12 profile-header">
                             <div class="row">
                                 <div class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
-                                    <h1>Nilesh Belurkar</h1>
+                                    <div class="typewriter">
+                                        <h1>Hello {{username}} !</h1>
+                                        <span class="blinking" *ngIf="!verified">Please verify your account.</span>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -37,46 +41,52 @@
                             <div class="row">
                                 <div class="col-md-8  profile-tag-section">
                                     <div class="row">
-                                            <div class="container">
-                                              <h1>Profile Details</h1>
-                                              <hr>
-                                              <div class="form-group">
+                                        <div class="container">
+                                            <h1>Profile Details</h1>
+                                            <hr>
+                                            <div class="form-group">
                                                 <label>First Name</label>
-                                                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"  />
-                                                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                                                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                                                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid':  profile.firstName.errors }" />
+                                                <div *ngIf=" profile.firstName.errors" class="invalid-feedback">
+                                                    <div *ngIf="profile.firstName.errors.required">First Name is required</div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label>Last Name</label>
-                                                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
-                                                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                                                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid':  profile.lastName.errors }" />
+                                                <div *ngIf=" profile.lastName.errors" class="invalid-feedback">
+                                                    <div *ngIf="profile.lastName.errors.required">Last Name is required</div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>DOB</label>
+                                                <input type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid':  profile.dob.errors }" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Gender</label>
+                                                <select id="gender" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid':  profile.gender.errors }">
+                                                    <option value="M">Male</option>
+                                                    <option value="F">Female</option>
+                                                    <option value="O">Other</option>
+                                                  </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Username</label>
+                                                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid':  profile.username.errors }" readonly />
+                                                <div *ngIf=" profile.username.errors" class="invalid-feedback">
+                                                    <div *ngIf="profile.username.errors.required">User Name is required</div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                                    <div *ngIf="f.email.errors.required">Email is required</div>
-                                                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid':  profile.email.errors }" readonly/>
+                                                <div *ngIf=" profile.email.errors" class="invalid-feedback">
+                                                    <div *ngIf="profile.email.errors.required">Email is required</div>
+                                                    <div *ngIf="profile.email.errors.email">Email must be a valid email address</div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label>Password</label>
-                                                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                                    <div *ngIf="f.password.errors.required">Password is required</div>
-                                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-                                                </div>
-                                            </div>
-                                              <button type="reset" class="btn btn-danger">Reset</button>
-                                              <button  [disabled]="this.updateForm.invalid" type="submit" class="btn btn-success">Update</button>
-                                            </div>
-                                          
-                                            <div class="container">
-                                              <p>Already have an account? <a href="#">Sign in</a>.</p>
-                                            </div>
+                                            <button [disabled]="this.updateForm.invalid" type="submit" class="btn btn-success">Update</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -87,4 +97,3 @@
         </div>
     </div>
 </form>
-   

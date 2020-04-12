@@ -19,18 +19,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  getUsername() {
-    return this.loginGroup.get('username');
-
-  }
-  getPassword() {
-    return this.loginGroup.get('password');
-  }
-
   onLogin() {
-    this.loginService.loginUser(this.getUsername(),this.getPassword()).subscribe(res=>{
-      console.log();
+    this.loginService.loginUser(this.loginGroup.value).subscribe(res => {
+      console.log("in login service");
+      localStorage.setItem("token", res.data);
+      console.log("token saved in localStorage");
     });
   }
 
