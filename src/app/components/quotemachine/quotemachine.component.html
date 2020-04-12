@@ -1,26 +1,24 @@
-
-    <div class="quote-box mx-auto">        
-            <div class="quote-text">
-                <i class="fa fa-quote-left"></i>
-                <!-- <div *ngIf="loading; else quote">Loading...</div> -->
-                <!-- <ng-template #quote> -->
-                    <span id="quote">
+<div class="quote-box mx-auto">
+    <div class="quote-text">
+        <i class="fa fa-quote-left"></i>
+        <span id="quote">
                         {{ quoteStatement?.quote }}                     
-                    </span>
-                <!-- </ng-template> -->
-            </div>
-            <div class="quote-author">
-                <!-- <div *ngIf="loading; else author">Loading...</div> -->
-                <!-- <ng-template #author> -->
-                    <span id="author">                        
+        </span>
+    </div>
+    <div class="quote-author">
+        <span id="author">                        
                         - {{ quoteStatement?.author }}    
                     </span>
-                <!-- </ng-template> -->
-            </div>
-            <div class="buttons">
-                <a href="{{ twitter_link }}" class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
-                    <i class="fa fa-twitter"></i>
-                </a>
-                <button type="button" (click)="makeNewQuote()" class="button" id="new-quote">New Quote</button>
-            </div>          
-        </div>    
+    </div>
+    <div class="buttons">
+        <a href="{{ twitter_link }}" class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
+            <i class="fa fa-twitter"></i>
+        </a>
+        <a href="{{ twitter_link }}" class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a href="{{ twitter_link }}" class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
+            <i class="fa fa-whatsapp"></i>
+        </a>
+    </div>
+</div>
