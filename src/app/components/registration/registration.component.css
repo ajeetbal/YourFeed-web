@@ -5,3 +5,8 @@ input {
 .submit {
     margin-top: 12px;
 }
+
+.card-block {
+    background-color: white;
+    height: 527px;
+}

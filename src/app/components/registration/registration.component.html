@@ -1,47 +1,45 @@
-<div class="card">
-    <div class="card-block">
-        <div class="card-text">
-            <form clrForm [formGroup]="regGroup" (submit)="onSubmit()">
-                <clr-input-container>
-                    <label>First Name</label>
-                    <input clrInput type="text" formControlName="firstName" />
-                    <clr-control-error *clrIfError="'required'">First name is required.</clr-control-error>
-                    <clr-control-error *clrIfError="'minlength'">First name is too short.</clr-control-error>
-                </clr-input-container>
-                <clr-input-container>
-                    <label>Last Name</label>
-                    <input clrInput type="text" formControlName="lastName" />
-                    <clr-control-error *clrIfError="'required'">Last name is required.</clr-control-error>
-                    <clr-control-error *clrIfError="'minlength'">Last name is too short.</clr-control-error>
-                </clr-input-container>
-                <clr-input-container>
-                    <label>Email</label>
-                    <input clrInput type="email" formControlName="email" />
-                    <clr-control-error *clrIfError="'required'">Email is required.</clr-control-error>
-                    <clr-control-error *clrIfError="'email'">Email is invalid.</clr-control-error>
-                </clr-input-container>
-                <clr-input-container>
-                    <label>Username</label>
-                    <input clrInput type="text" formControlName="username" (focusout)="checkUserNameAvailability($event)" />
-                    <clr-control-error *clrIfError="'required'">Username is required.</clr-control-error>
-                    <clr-control-error *clrIfError="'minlength'">Username is too short.</clr-control-error>
-                    <clr-control-error *clrIfError="'maxlength'">Username is too long.</clr-control-error>
-                    <clr-control-error *clrIfError="'unavailable'">Username is not available.</clr-control-error>
-                </clr-input-container>
-                <clr-input-container>
-                    <label>Password</label>
-                    <input clrInput type="password" formControlName="password" />
-                    <clr-control-error *clrIfError="'required'">Password is required.</clr-control-error>
-                    <clr-control-error *clrIfError="'minlength'">Password is too short.</clr-control-error>
-                </clr-input-container>
-                <clr-input-container>
-                    <label>Confirm Password</label>
-                    <input clrInput type="password" formControlName="confirmPassword" />
-                    <clr-control-error *clrIfError="'required'">Password is required.</clr-control-error>
-                    <clr-control-error *clrIfError="'nomatch'">Passwords do not match.</clr-control-error>
-                </clr-input-container>
-                <button class="btn btn-primary btn-md submit" [disabled]="regGroup.invalid" type="submit">Sign Up</button>
-            </form>
-        </div>
+<div class="card-block">
+    <div class="card-text">
+        <form clrForm [formGroup]="regGroup" (submit)="onSubmit()">
+            <clr-input-container>
+                <label>First Name</label>
+                <input clrInput type="text" formControlName="firstName" />
+                <clr-control-error *clrIfError="'required'">First name is required.</clr-control-error>
+                <clr-control-error *clrIfError="'minlength'">First name is too short.</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+                <label>Last Name</label>
+                <input clrInput type="text" formControlName="lastName" />
+                <clr-control-error *clrIfError="'required'">Last name is required.</clr-control-error>
+                <clr-control-error *clrIfError="'minlength'">Last name is too short.</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+                <label>Email</label>
+                <input clrInput type="email" formControlName="email" />
+                <clr-control-error *clrIfError="'required'">Email is required.</clr-control-error>
+                <clr-control-error *clrIfError="'email'">Email is invalid.</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+                <label>Username</label>
+                <input clrInput type="text" formControlName="username" (focusout)="checkUserNameAvailability($event)" />
+                <clr-control-error *clrIfError="'required'">Username is required.</clr-control-error>
+                <clr-control-error *clrIfError="'minlength'">Username is too short.</clr-control-error>
+                <clr-control-error *clrIfError="'maxlength'">Username is too long.</clr-control-error>
+                <clr-control-error *clrIfError="'unavailable'">Username is not available.</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+                <label>Password</label>
+                <input clrInput type="password" formControlName="password" />
+                <clr-control-error *clrIfError="'required'">Password is required.</clr-control-error>
+                <clr-control-error *clrIfError="'minlength'">Password is too short.</clr-control-error>
+            </clr-input-container>
+            <clr-input-container>
+                <label>Confirm Password</label>
+                <input clrInput type="password" formControlName="confirmPassword" />
+                <clr-control-error *clrIfError="'required'">Password is required.</clr-control-error>
+                <clr-control-error *clrIfError="'nomatch'">Passwords do not match.</clr-control-error>
+            </clr-input-container>
+            <button class="btn btn-primary btn-md submit" [disabled]="regGroup.invalid" type="submit">Sign Up</button>
+        </form>
     </div>
 </div>
