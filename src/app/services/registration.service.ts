@@ -10,7 +10,7 @@ export class RegistrationService {
   registerUser(model: object): Observable<any> {
     const getHeaders: HttpHeaders = new HttpHeaders({
       "Content-Type": "application/json"
-    });
+    }); 
     return this.http.post<any>(BASE_URL + APIS.USER_SAVE, model, { headers: getHeaders });
   }
 
@@ -19,4 +19,12 @@ export class RegistrationService {
     );
   }
   constructor(private http: HttpClient) { }
+
+  UpdateUser(model: object): Observable<any> {
+    const getHeaders: HttpHeaders = new HttpHeaders({
+      'Authorization': `Bearer` ,
+      "Content-Type": "application/json"
+    }); 
+    return this.http.put<any>(BASE_URL + APIS.USER_UPDATE, model, { headers: getHeaders });
+  }
 }

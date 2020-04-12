@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RegistrationService } from 'src/app/services/registration.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,7 +11,7 @@ export class UserProfileComponent implements OnInit {
   updateForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private registrationService: RegistrationService) { }
 
   ngOnInit(): void {
     this.updateForm = this.formBuilder.group({
@@ -25,7 +26,9 @@ export class UserProfileComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (!this.updateForm.invalid) {
-       console.log(this.updateForm.value);
+      this.registrationService.UpdateUser(this.updateForm.value).subscribe(res => {
+        console.log(res);
+      });
     }
 }
 }
