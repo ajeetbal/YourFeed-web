@@ -22,6 +22,7 @@ import { LoginComponent } from './components/login/login.component';
 import { QuotemachineComponent } from './components/quotemachine/quotemachine.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContentSectionComponent,
     LoginComponent,
     QuotemachineComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+
+<input type="file" (change)="onFileUpload($event)" name="logo" required>                               
+<button (click)="uploadImage()">UploadImage</button>
+<br><br>
+
+<img src="{{imageUrl}}" *ngIf="imageUrl" alt="Your image" style="display: block" />
+<a (click)="downloadImage()" class="btn clss"
+                  target="_self" download>Download</a>
