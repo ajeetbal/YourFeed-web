@@ -22,6 +22,37 @@ import { LoginComponent } from './components/login/login.component';
 import { QuotemachineComponent } from './components/quotemachine/quotemachine.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxUiLoaderModule, NgxUiLoaderConfig, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  "bgsColor": "red",
+  "bgsOpacity": 0.5,
+  "bgsPosition": "bottom-right",
+  "bgsSize": 60,
+  "bgsType": "ball-spin-clockwise",
+  "blur": 5,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "red",
+  "fgsPosition": "center-center",
+  "fgsSize": 60,
+  "fgsType": "chasing-dots",
+  "gap": 24,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgba(40, 40, 40, 0.8)",
+  "pbColor": "red",
+  "pbDirection": "ltr",
+  "pbThickness": 3,
+  "hasProgressBar": true,
+  "text": "",
+  "textColor": "#FFFFFF",
+  "textPosition": "center-center",
+  "maxTime": -1,
+  "minTime": 300
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +79,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatTabsModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
